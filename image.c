@@ -6,7 +6,7 @@
 /*   By: apaget <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 03:17:37 by apaget            #+#    #+#             */
-/*   Updated: 2016/03/24 06:33:44 by apaget           ###   ########.fr       */
+/*   Updated: 2016/03/24 09:25:36 by apaget           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,18 @@ void	clear_img(t_env *env, int color)
 	int y;
 
 	x = 0;
-	y = 0;
 	while (x < env->length)
 	{
+		y = 0;
 		while (y < env->height)
 		{
-			pixel_put_to_image(env->img.img, x, y, color);
+			mlx_pixel_put(env->mlx, env->ptr_win, x, y, 0x0);
 			y++;
 		}
-		y = 0;
 		x++;
 	}
+	mlx_put_image_to_window(env->mlx, env->ptr_win, env->img.img, 0, 0);
+	printf("end\n");
 }
 
 void	draw_img(t_env *env)
@@ -56,7 +57,7 @@ void	draw_img(t_env *env)
 	mlx_put_image_to_window(env->mlx, env->ptr_win, env->img.img, 0, 0);
 }
 
-int get_color(int c)
+int		get_color(int c)
 {
 	int color;
 

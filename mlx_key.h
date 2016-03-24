@@ -6,7 +6,7 @@
 /*   By: apaget <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 20:02:47 by apaget            #+#    #+#             */
-/*   Updated: 2016/03/24 08:53:04 by apaget           ###   ########.fr       */
+/*   Updated: 2016/03/24 09:50:16 by apaget           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define MALBORORORO 99
 # define JULIA		98
+# define BURNING	97
 # define MLX_KEY_ESC	53
 # define MLX_KEY_UP		126
 # define MLX_KEY_DOWN	125

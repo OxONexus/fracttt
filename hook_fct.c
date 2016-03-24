@@ -6,7 +6,7 @@
 /*   By: apaget <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 08:39:41 by apaget            #+#    #+#             */
-/*   Updated: 2016/03/24 08:54:36 by apaget           ###   ########.fr       */
+/*   Updated: 2016/03/24 09:17:00 by apaget           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ int		key_hook(int key, t_env *env)
 		env->map.pos.x -= 15;
 	else if (key == MLX_KEY_Z)
 		env->map.max_it += 20;
+	else if (key == MLX_KEY_A)
+	{
+		env->map.max_it = 20;
+		env->map.pos.x = 0;
+		env->map.pos.y = 0;
+	}
 	update(env);
 	return (1);
 }
@@ -51,8 +57,10 @@ int		expose_hook(t_env *env)
 
 int		mouse_hook(int x, int y, t_env *env)
 {
-	env->map.c.i = 1.5 * (y - (env->length / 2)) / (env->height * env->map.zoom / 2);
-	env->map.c.r = 1.5 * (x - (env->height / 2)) / (env->height * env->map.zoom / 2);
+	env->map.c.i = 1.5 * (y - (env->length / 2)) / (env->height *
+			env->map.zoom / 2);
+	env->map.c.r = 1.5 * (x - (env->height / 2)) / (env->height *
+			env->map.zoom / 2);
 	update(env);
 	return (1);
 }

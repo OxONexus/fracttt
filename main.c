@@ -6,16 +6,17 @@
 /*   By: apaget <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 06:00:24 by apaget            #+#    #+#             */
-/*   Updated: 2016/03/24 08:33:16 by apaget           ###   ########.fr       */
+/*   Updated: 2016/03/24 09:12:14 by apaget           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_env env;
+
 	if (argc == 2)
 	{
 		init_env(&env, argv[1]);
@@ -28,6 +29,7 @@ int main(int argc, char *argv[])
 		mlx_loop(env.mlx);
 	}
 	else
-		write(1, "Usage : ./fractol [NAME]\n\tAvailable : julia, Mandelbrot, ??", 59);
-	return 0;
+		write(1,
+		"Usage : ./fractol [NAME]\n\tAvailable : julia, Mandelbrot, ??", 59);
+	return (0);
 }

@@ -6,18 +6,18 @@
 /*   By: apaget <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 16:44:56 by apaget            #+#    #+#             */
-/*   Updated: 2016/03/24 08:48:38 by apaget           ###   ########.fr       */
+/*   Updated: 2016/03/24 09:51:31 by apaget           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
 # include "mlx.h"
 # include "mlx_key.h"
 # include "libft/includes/libft.h"
 # include <math.h>
-#include <stdlib.h>
+# include <stdlib.h>
 
 typedef struct			s_img
 {
@@ -36,11 +36,13 @@ typedef struct			s_reel
 	double				i;
 	double				r;
 }						t_reel;
+
 typedef struct			s_pt
 {
-	int x;
-	int y;
+						int x;
+						int y;
 }						t_pt;
+
 typedef struct			s_map
 {
 	int					max_it;
@@ -67,10 +69,15 @@ void					mandelbrot(t_env *env);
 int						init_env(t_env *env, char *name);
 int						key_hook(int key, t_env *env);
 int						expose_hook(t_env *env);
-void					pixel_put_to_image(void *img, int x, int y, unsigned long color);
+void					pixel_put_to_image(void *img, int x, int y,
+		unsigned long color);
 int						get_color(int c);
 int						mouse_hook(int x, int y, t_env *env);
 int						click_hook(int button, int x, int y, t_env *env);
 void					update(t_env *env);
+void					get_fractal(char *str, t_env *env);
+void					clear_img(t_env *env, int color);
+void					apply_pos(t_env *env, int *i);
+void					burningship(t_env *env);
 
 #endif
