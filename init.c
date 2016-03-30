@@ -6,7 +6,7 @@
 /*   By: apaget <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 19:52:34 by apaget            #+#    #+#             */
-/*   Updated: 2016/03/24 09:52:44 by apaget           ###   ########.fr       */
+/*   Updated: 2016/03/30 16:10:38 by apaget           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	init_map(t_env *env)
 
 int		init_env(t_env *env, char *name)
 {
-	env->length = 500;
-	env->height = 500;
+	env->length = 1920;
+	env->height = env->length * 3 / 4;
 	env->mlx = NULL;
 	env->ptr_win = NULL;
 	if ((env->mlx = mlx_init()) == NULL)

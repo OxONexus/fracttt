@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apaget <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 16:44:56 by apaget            #+#    #+#             */
-/*   Updated: 2016/03/24 09:51:31 by apaget           ###   ########.fr       */
+/*   Created: 2016/03/30 15:13:27 by apaget            #+#    #+#             */
+/*   Updated: 2016/03/30 16:34:02 by apaget           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "mlx.h"
 # include "mlx_key.h"
 # include "libft/includes/libft.h"
+# include <pthread.h>
 # include <math.h>
 # include <stdlib.h>
 
@@ -64,10 +65,17 @@ typedef struct			s_env
 	t_map				map;
 }						t_env;
 
-void					julia(t_env *env);
-void					mandelbrot(t_env *env);
+typedef struct			s_arg
+{
+	int					from;
+	int					to;
+	t_env				*env;
+}						t_arg;
+
+void					julia(t_arg *arg);
+void					mandelbrot(t_arg *arg);
 int						init_env(t_env *env, char *name);
-int						key_hook(int key, t_env *env);
+int						key_hook(int key, t_env*env);
 int						expose_hook(t_env *env);
 void					pixel_put_to_image(void *img, int x, int y,
 		unsigned long color);
@@ -78,6 +86,6 @@ void					update(t_env *env);
 void					get_fractal(char *str, t_env *env);
 void					clear_img(t_env *env, int color);
 void					apply_pos(t_env *env, int *i);
-void					burningship(t_env *env);
+void					burningship(t_arg *arg);
 
 #endif

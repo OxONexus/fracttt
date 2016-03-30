@@ -6,11 +6,12 @@
 /*   By: apaget <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 03:17:37 by apaget            #+#    #+#             */
-/*   Updated: 2016/03/24 09:25:36 by apaget           ###   ########.fr       */
+/*   Updated: 2016/03/30 16:21:12 by apaget           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+#include <stdio.h>
 
 void	pixel_put_to_image(void *img, int x, int y, unsigned long color)
 {
@@ -62,6 +63,6 @@ int		get_color(int c)
 	int color;
 
 	color = 256 * 256 * (256 - sin(c) * 10) + 256 + (256 - cos(c))
-		+ (256 - cos(c));
+		+ (256 - tan(c));
 	return (color);
 }

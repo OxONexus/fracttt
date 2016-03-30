@@ -6,7 +6,7 @@
 /*   By: apaget <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/24 06:00:24 by apaget            #+#    #+#             */
-/*   Updated: 2016/03/24 09:12:14 by apaget           ###   ########.fr       */
+/*   Updated: 2016/03/30 16:23:51 by apaget           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int	main(int argc, char *argv[])
 {
 	t_env env;
+	t_arg arg;
 
 	if (argc == 2)
 	{
@@ -29,7 +30,6 @@ int	main(int argc, char *argv[])
 		mlx_loop(env.mlx);
 	}
 	else
-		write(1,
-		"Usage : ./fractol [NAME]\n\tAvailable : julia, Mandelbrot, ??", 59);
+		ft_putstr("Usage : ./fractol [NAME]\n\tAvailable : julia, Mandelbrot, burningship");
 	return (0);
 }
